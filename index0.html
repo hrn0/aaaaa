@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>暗算ゲーム</title>
+    <style media="screen">
+      body{
+        background: #efefef;
+        width: 300px;
+        margin: 0 auto;
+      }
+      h1,h3,p{
+        text-align: center;
+        margin: 10px;
+      }
+      .btn{
+        transition: 0.3s;
+        height:50px;
+        width: 50px;
+        background: linear-gradient(skyblue,dodgerblue);
+        box-shadow: 0 -2px 15px blue inset,
+                    0 7px 10px #fff inset;
+        margin: 5px;
+        border-radius: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 30px;
+        float: left;
+      }
+      .btn:active{
+        transform: scale(1.5);
+        /* filter: hue-rotate(120deg); */
+        /* border-radius: 50px 10px 10px 50px; */
+      }
+      #text{
+        margin: 10px 0;
+        width: 290px;
+        height: 40px;
+        padding: 5px;
+        background: pink;
+        border-radius: 10px;
+        line-height: 40px;
+        font-size: 35px;
+        box-shadow: 0 0 35px hotpink inset,
+                    0 0 5px gray inset;
+        text-align: center;
+      }
+      #mtext{
+        font-size: 50px;
+        text-align: center;
+        margin: 20px;
+        font-weight: bold;
+        /* color: blue; */
+      }
+      #hantei{
+        height: 100px;
+        width: 300px;
+        font-size: 30px;
+        /* background: blue; */
+        position: absolute;
+        margin-top: 130px;
+        text-align: center;
+      }
+      input{
+        width: 80px;
+        margin: 5px 29px;
+        border-radius: 30px;
+        border: none;
+        outline: none;
+        background: #dedede;
+      }
+      #sbhh:active{
+        background: pink;
+      }
+      #sbcc:active{
+        background: skyblue;
+      }
+      #rr{
+        height: 25px;
+        width: 25px;
+        background-size: cover;
+        background-image: url(img/1.png);
+        position: absolute;
+        margin-left: 280px;
+        margin-top: -30px;
+      }
+      #mo{
+        width: 100px;
+        height: 50px;
+        background: linear-gradient(150deg,aquamarine,mediumspringgreen);
+        box-shadow: 0 0 30px #fff inset,
+                    0 0 10px mediumaquamarine inset;
+        text-align: center;
+        line-height: 50px;
+        margin-left: 100px;
+        margin-top: 230px;
+        border-radius: 10px;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>暗算げーむ</h1>
+    <h3>* かんたん *</h3>
+    <p>ただ暗算するだけのゲーム(？)です。</p>
+    <div id="mtext"></div>
+    <div id="text"></div>
+    <input id="sbhh" type="button" value="判定"></input>
+    <input id="sbcc" type="button" value="クリア"></input>
+    <div id="rr"></div>
+    <br><br>
+    <div id="hantei"></div>
+    <a href="index.html">
+      <div id="mo">もどる</div>
+    </a>
+      <script type="text/javascript">
+    let num = 0;//textに入力される答え
+    let mpu = 0;
+    let lnum = 0;//正答
+
+    const sbhh = document.getElementById('sbhh');
+    const sbcc = document.getElementById('sbcc');
+    const rr = document.getElementById('rr');
+
+    const num1 = Math.floor(Math.random()*100+1);
+    //num1をランダムで生成　1-100
+    const num2 = Math.floor(Math.random()*10+1);
+    //num2をランダムで生成　1-100
+    const mtext = document.getElementById('mtext');
+    //表示式
+
+      for(let i = 0;i <= 9;i++){
+        const div = document.createElement('div');
+        div.classList.add('btn');
+       {if(i==0){
+          div.textContent = '0';
+        }else if (i==1) {
+          div.textContent = '1';
+        }else if (i==2) {
+          div.textContent = '2';
+        }else if (i==3) {
+          div.textContent = '3';
+        }else if (i==4) {
+          div.textContent = '4';
+        }else if (i==5) {
+          div.textContent = '5';
+        }else if (i==6) {
+          div.textContent = '6';
+        }else if (i==7) {
+          div.textContent = '7';
+        }else if (i==8) {
+          div.textContent = '8';
+        }else if (i==9) {
+          div.textContent = '9';
+        }
+      }
+        div.addEventListener('click',function(){
+          text.style.color = "black";
+          if (div.textContent == '0') {
+            if (num!=0) {
+              num = num*10+0;
+            }else {
+              num = `0`;
+            }
+            text.textContent = num;
+          }else if (div.textContent == '1') {
+            if (num!=0) {
+              num = num*10+1;
+            }else {
+              num = 1;
+            }
+            text.textContent = num;
+          }else if (div.textContent == '2') {
+            if (num!=0) {
+              num = num*10+2;
+            }else {
+              num = 2;
+            }
+            text.textContent = num;
+          }else if (div.textContent == '3') {
+            if (num!=0) {
+              num = num*10+3;
+            }else {
+              num = 3;
+            }
+            text.textContent = num;
+          }else if (div.textContent == '4') {
+            if (num!=0) {
+              num = num*10+4;
+            }else {
+              num = 4;
+            }
+            text.textContent = num;
+          }else if (div.textContent == '5') {
+            if (num!=0) {
+              num = num*10+5;
+            }else {
+              num = 5;
+            }
+            text.textContent = num;
+          }else if (div.textContent == '6') {
+            if (num!=0) {
+              num = num*10+6;
+            }else {
+              num = 6;
+            }
+            text.textContent = num;
+          }else if (div.textContent == '7') {
+            if (num!=0) {
+              num = num*10+7;
+            }else {
+              num = 7;
+            }
+            text.textContent = num;
+          }else if (div.textContent == '8') {
+            if (num!=0) {
+              num = num*10+8;
+            }else {
+              num = 8;
+            }
+            text.textContent = num;
+          }else if (div.textContent == '9') {
+            if (num!=0) {
+              num = num*10+9;
+            }else {
+              num = 9;
+            }
+            text.textContent = num;
+          }
+        })
+        document.body.appendChild(div);
+    }
+
+      mtext.textContent = `${num1}+${num2}=☐`;
+      lnum = num1+num2;
+
+    var count = 0;
+    var countup = function(){
+      console.log(count++);
+      var id = setTimeout(countup, 1000);
+      if(count > 1.5){　
+        clearTimeout(id);　//idをclearTimeoutで指定している
+        location.reload()
+      }
+    }
+
+    sbhh.addEventListener('click',function(){
+      if (num == lnum) {
+        hantei.textContent = '正解！';
+        text.style.color = "blue";
+        countup();
+      }else if (num == 0 || num == '--') {
+          hantei.textContent = '未回答';
+          text.textContent = '--';
+          text.style.color = "yellow";
+        }else{
+          hantei.textContent = '不正解！';
+          text.style.color = "red";
+          text.textContent = `A:${lnum}   ×:${num}`;
+          countup();
+          // location.reload()
+      }
+    })
+
+    sbcc.addEventListener('click',function(){
+      num = 0;
+      text.textContent = '';
+    })
+
+    rr.addEventListener('click',function(){
+      location.reload();
+    })
+
+    </script>
+  </body>
+</html>
