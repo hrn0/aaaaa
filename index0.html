@@ -62,9 +62,11 @@
         text-align: center;
       }
       input{
-        width: 80px;
-        margin: 5px 29px;
+        width: 93px;
+        height: 50px;
+        margin: 5px 2px;
         border-radius: 30px;
+        font-size: 17px;
         border: none;
         outline: none;
         background: #dedede;
@@ -75,13 +77,16 @@
       #sbcc:active{
         background: skyblue;
       }
+      #sbch:active{
+        background: aquamarine;
+      }
       #rr{
         height: 25px;
         width: 25px;
         background-size: cover;
         background-image: url(1.png);
         position: absolute;
-        margin-left: 280px;
+        margin-left: 320px;
         margin-top: -30px;
       }
       #mo{
@@ -107,6 +112,7 @@
     <div id="text"></div>
     <input id="sbhh" type="button" value="判定"></input>
     <input id="sbcc" type="button" value="クリア"></input>
+    <input id="sbch" type="button" value="一文字消す"></input>
     <div id="rr"></div>
     <br><br>
     <div id="hantei"></div>
@@ -120,6 +126,7 @@
 
     const sbhh = document.getElementById('sbhh');
     const sbcc = document.getElementById('sbcc');
+    const sbch = document.getElementById('sbch');
     const rr = document.getElementById('rr');
 
     const num1 = Math.floor(Math.random()*100+1);
@@ -238,8 +245,8 @@
     var countup = function(){
       console.log(count++);
       var id = setTimeout(countup, 1000);
-      if(count > 1.5){　
-        clearTimeout(id);　//idをclearTimeoutで指定している
+      if(count > 4){　
+        clearTimeout(id);
         location.reload()
       }
     }
@@ -265,6 +272,14 @@
     sbcc.addEventListener('click',function(){
       num = 0;
       text.textContent = '';
+    })
+
+    sbch.addEventListener('click',function(){
+      num = Math.floor(num/10);
+      text.textContent = num;
+      if (num == 0) {
+        text.textContent = '--';
+      }
     })
 
     rr.addEventListener('click',function(){
