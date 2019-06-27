@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
   <head>
+    <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache"> 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@hr_0_" />
+    <meta name="twitter:site" content="@ユーザー名" />
     <meta property="og:url" content="https://hrn0.github.io/aaaaa/" />
     <meta property="og:title" content="暗算ゲーム" />
     <meta property="og:description" content="ただ暗算するだけのゲーム(？)です。" />
-    <meta property="og:image" content="https://hrn0.github.io/aaaaa/2.png" />
-    
+    <meta property="og:image" content="https://hrn0.github.io/aaaaa/img/2.png" />
+
     <meta charset="utf-8">
     <title>暗算ゲーム</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
     <style media="screen">
       body{
+        font-family: 'Comic Sans MS',cursive;
         background: #efefef;
         width: 300px;
         margin: 0 auto;
@@ -25,16 +27,18 @@
       div{
         width: 200px;
         height: 100px;
+        padding: 10px;
         background: linear-gradient(150deg,pink,hotpink);
         box-shadow: 0 0 50px #fff inset,
                     0 0 30px palevioletred inset;
         margin: 30px auto;
-        border-radius: 10px;
+        border-radius: 15px;
         text-align: center;
-        line-height: 100px;
+        line-height: 33px;
         font-size: 20px;
         font-weight: bold;
         color: #fff;
+        /* border: solid 10px transparent; */
       }
       .ka{
         filter: hue-rotate(50deg);
@@ -45,6 +49,15 @@
       .mu{
         filter: hue-rotate(-120deg);
       }
+      .ka:hover{
+        filter: hue-rotate(50deg) opacity(0.6);
+      }
+      .hu:hover{
+        filter: hue-rotate(20deg) opacity(0.6);
+      }
+      .mu:hover{
+        filter: hue-rotate(-120deg) opacity(0.6);
+      }
       a{
         text-decoration: none;
       }
@@ -53,10 +66,36 @@
   <body>
     <h1>暗算げーむ</h1>
     <p>ただ暗算するだけのゲーム(？)です。</p>
-    <a href="index0.html"><div class="ka">かんたん</div></a>
-    <a href="index1.html"><div class="hu">ふつう</div></a>
-    <a href="index2.html"><div class="mu">むずかしい</div></a>
+    <a href="index0.html"><div class="ka">かんたん<br>★☆☆<br>Lv3</div></a>
+    <a href="index1.html"><div class="hu">ふつう<br>★★☆<br>Lv3</div></a>
+    <a href="index2.html"><div class="mu">むずかしい<br>★★★<br>Lv3</div></a>
 
+    <!-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+    class="twitter-share-button" data-show-count="false">
+    Tweet
+  </a><script async src="https://platform.twitter.com/widgets.js"
+   charset="utf-8"></script> -->
+
+   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js">
+   </script>
+
+   <script>
+     window.sr = ScrollReveal({ reset: true ,mobile: true});
+     sr.reveal('.ka',{ origin: 'left' , distance: '1000%',
+     rotate: {x:0,y:0,z:-100},duration: 2300 });
+
+     window.sr = ScrollReveal({ reset: true ,mobile: true});
+     sr.reveal('.hu',{ origin: 'right' , distance: '1000%',
+     rotate: {x:0,y:0,z:100},duration: 1500 });
+
+     window.sr = ScrollReveal({ reset: true ,mobile: true});
+     sr.reveal('.mu',{ origin: 'bottom' , distance: '1000%',
+     rotate: {x:0,y:0,z:180},duration: 2500 });
+
+     window.sr = ScrollReveal({ reset: true ,mobile: true});
+     sr.reveal( 'p,h1', { scale: 1.0, delay :500 ,opacity: 0,
+       duration: 1500});
+   </script>
     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
     class="twitter-share-button" data-show-count="false">
     Tweet
