@@ -1,10 +1,10 @@
-
   body{
     font-family: 'Comic Sans MS';
     background: #efefef;
     width: 330px;
     margin: 0 auto;
     cursor: pointer;
+    user-select: none;
   }
   h1,h3,p{
     text-align: center;
