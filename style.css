@@ -60,6 +60,8 @@
     position: absolute;
     margin-top: 130px;
     text-align: center;
+    margin-left: 0;
+    margin-right: 0;
   }
   input{
     width: 90px;
