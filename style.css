@@ -2,7 +2,7 @@
   body{
     font-family: 'Comic Sans MS';
     background: #efefef;
-    width: 310px;
+    width: 300px;
     margin: 0 auto;
     cursor: pointer;
   }
@@ -21,7 +21,7 @@
     text-align: center;
     line-height: 50px;
     font-size: 30px;
-    float: left;  
+    float: left;
   }
   .btn:hover{
     opacity: 0.6;
@@ -54,17 +54,15 @@
   }
   #hantei{
     height: 100px;
-    width: 330px;
+    width: 300px;
     font-size: 30px;
     /* background: blue; */
     position: absolute;
     margin-top: 130px;
     text-align: center;
-    margin-left: 0;
-    margin-right: 0;
   }
   input{
-    width: 90px;
+    width: 93px;
     height: 50px;
     margin: 5px 1px;
     border-radius: 30px;
@@ -77,13 +75,13 @@
     background: #ccc;
   }
   #sbhh{
-    border: 2px solid lightpink;
+    border: 3px solid lightpink;
   }
   #sbcc{
-    border: 2px solid skyblue;
+    border: 3px solid skyblue;
   }
   #sbch{
-    border: 2px solid aquamarine;
+    border: 3px solid aquamarine;
   }
   #sbhh:active{
     background: pink;
@@ -100,7 +98,7 @@
     background-size: cover;
     background-image: url(1.png);
     position: absolute;
-    margin-left: 320px;
+    margin-left: 300px;
     margin-top: -30px;
   }
   #mo{
@@ -112,7 +110,7 @@
     text-align: center;
     line-height: 50px;
     margin-left: 100px;
-    margin-top: 230px;
+    margin-top: 180px;
     border-radius: 10px;
     position: absolute;
   }
