@@ -1,0 +1,7 @@
+<Files ~ "\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ https://hrn0.github.io/aaaaa/$1 [R=301,L]
